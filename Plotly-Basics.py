@@ -199,8 +199,3 @@ fig.show()
 
 # It is found that here the innermost circle Eve represents the parent and the second outer circle represents his childrent Cain,Seth and so on.
 # Further the outermost circle represents his grandchildren Enoch and Enos
-
-# Practice Exercises: Apply your Plotly Skills to an Airline Dataset
-# The Reporting Carrier On-Time Performance Dataset contains information on approximately 200 million domestic US flights reported to the United States Bureau of 
-# Transportation Statistics. The dataset contains basic information about each flight (such as date, time, departure airport, arrival airport) and, if applicable, 
-# the amount of time the flight was delayed and information about the reason for the delay. This dataset can be used to predict the likelihood of a flight arriving on time.
