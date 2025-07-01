@@ -1,6 +1,5 @@
 # Analyze flight delays in a dashboard.
 
-
 # Monthly average carrier delay by reporting airline for the given year.
 # Monthly average weather delay by reporting airline for the given year.
 # Monthly average national air system delay by reporting airline for the given year.
@@ -12,6 +11,7 @@
 # Create a callback function. Add callback decorator, define inputs and outputs.
 # Review the helper function that performs computation on the provided inputs.
 # Create 5 line graphs.
+
 
 # Import required libraries
 import pandas as pd
@@ -25,8 +25,10 @@ airline_data =  pd.read_csv('https://cf-courses-data.s3.us.cloud-object-storage.
                             encoding = "ISO-8859-1",
                             dtype={'Div1Airport': str, 'Div1TailNum': str, 
                                    'Div2Airport': str, 'Div2TailNum': str})
+
 # Create a dash application
 app = dash.Dash(__name__)
+
 # Build dash app layout
 app.layout = html.Div(children=[ html.H1('Flight Delay Time Statistics', 
                                 style={'textAlign': 'center', 'color': '#503D36',
@@ -76,6 +78,7 @@ Arguments:
 Returns:
     List of figures computed using the provided helper function `compute_info`.
 """
+
 # Callback decorator
 @app.callback( [
                Output(component_id='carrier-plot', component_property='figure'),
@@ -85,6 +88,7 @@ Returns:
                Output(component_id='late-plot', component_property='figure')
                ],
                Input(component_id='input-year', component_property='value'))
+
 # Computation to callback function and return graph
 def get_graph(entered_year):
     
@@ -103,8 +107,7 @@ def get_graph(entered_year):
     late_fig = px.line(avg_late, x='Month', y='LateAircraftDelay', color='Reporting_Airline', title='Average late aircraft delay time (minutes) by airline')
             
     return[carrier_fig, weather_fig, nas_fig, sec_fig, late_fig]
+
 # Run the app
 if __name__ == '__main__':
     app.run_server()
-
-# Congratulations, you have successfully created your dash application! :)))
